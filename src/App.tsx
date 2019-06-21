@@ -6,6 +6,7 @@ import createHistory from "history/createBrowserHistory";
 import todoApp from "./reducers/todoApp";
 import { Provider } from "react-redux";
 import TodoListPage from "./redux-todo-list/TodoListPage";
+import TodoList from "./todo-list-with-context/TodoListPage";
 
 const store = createStore(todoApp);
 const history = createHistory();
@@ -33,7 +34,7 @@ function App() {
       </ul>
       <div className="container">
         <Route path="/todo-list-redux" component={TodoListWithRedux} />
-        {/* <Route path="/todo-list-with-context" component={UserTable} /> */}
+        <Route path="/todo-list-with-context" component={TodoList} />
       </div>
     </Router>
   );
