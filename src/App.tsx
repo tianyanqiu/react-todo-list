@@ -7,6 +7,7 @@ import todoApp from "./reducers/todoApp";
 import { Provider } from "react-redux";
 import TodoListPage from "./redux-todo-list/TodoListPage";
 import TodoList from "./todo-list-with-context/TodoListPage";
+import RxTodoListPage from "./todo-list-with-rxjs/TodoListPage";
 
 const store = createStore(todoApp);
 const history = createHistory();
@@ -31,10 +32,14 @@ function App() {
             使用context+useReducer+immer的待办列表
           </Link>
         </li>
+        <li>
+          <Link to="/todo-list-with-rxjs">使用rxjs实现的待办列表</Link>
+        </li>
       </ul>
       <div className="container">
-        <Route path="/todo-list-redux" component={TodoListWithRedux} />
+        <Route path="/todo-list-redux" exact component={TodoListWithRedux} />
         <Route path="/todo-list-with-context" component={TodoList} />
+        <Route path="/todo-list-with-rxjs" component={RxTodoListPage} />
       </div>
     </Router>
   );
